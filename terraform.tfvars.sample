@@ -1,0 +1,5 @@
+do_token = "insert yours token"
+
+public_key = "~/terra/bla/bla/yours/..rsa.pub"
+
+region = "yoursReg"
