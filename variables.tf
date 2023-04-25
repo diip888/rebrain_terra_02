@@ -11,7 +11,12 @@ variable "do_token" {
 #  type = list
 #}
 
-#variable "public_key" {
+#variable "path_public_key" {
 #  type = string
 #  description = "file with public key" 
 #}
+
+variable "mail" {
+  type = string
+  description = "mail_at_mail"
+} 

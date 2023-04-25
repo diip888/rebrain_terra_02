@@ -1,7 +1,8 @@
 resource "digitalocean_ssh_key" "do_create_key" {
   name       = "do_create_key"
   public_key = file("~/terra_re/2_1/key_ssh/id_rsa.pub")
-#  public_key = var.public_key
+#  public_key = var.path_public_key
+#  public_key = file("${path_public_key}")
 }
 
 resource "digitalocean_droplet" "webdo-dplus" {
