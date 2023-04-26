@@ -1,1 +1,1 @@
-terraform import digitalocean_ssh_key.do_create_key 38080289
+terraform import digitalocean_ssh_key.do_create_key $1

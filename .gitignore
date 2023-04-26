@@ -3,3 +3,4 @@
 terraform.tfstate
 key_ssh/
 .terraform/
+del.sh

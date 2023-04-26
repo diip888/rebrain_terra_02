@@ -1,18 +1,25 @@
-resource "digitalocean_ssh_key" "do_create_key" {
-  name       = "do_create_key"
-  public_key = file("~/terra_re/2_1/key_ssh/id_rsa.pub")
-#  public_key = var.path_public_key
-#  public_key = file("${path_public_key}")
+# Rebrain key from data
+data "digitalocean_ssh_keys" "re_key" {
+  filter {
+    key = "name"
+    values = ["REBRAIN.SSH.PUB.KEY"]
+  }
+}
+
+##  RESOURCES ###########################################
+
+resource "digitalocean_ssh_key" "dplusmailru" {
+  name       = var.name_ssh_key #"ssh.dplusmailru"
+  public_key = file(var.ssh_path_public_file)
 }
 
 resource "digitalocean_droplet" "webdo-dplus" {
-  image    = "ubuntu-20-04-x64"
-  name     = "webdo-dplus"
+  image    = var.image
+  name     = var.name-resource
   region   = var.region
-  size     = "s-1vcpu-1gb"
-  ssh_keys = [digitalocean_ssh_key.do_create_key.id]
-#  ssh_keys = ["38080289"]
-#  ssh_keys = "${var.ssh_keys}"
+  size     = var.size
+  ssh_keys = [digitalocean_ssh_key.dplusmailru.id]
+#  ssh_keys = [digitalocean_ssh_key.dplusmailru.id, data.digitalocean_ssh_keys.re_key.id]
+#
   tags     = [digitalocean_tag.mytag1.id, digitalocean_tag.mytag2.id]
 }
-#         new  "id": "38090895",
