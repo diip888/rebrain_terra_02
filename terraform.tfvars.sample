@@ -1,6 +1,6 @@
 do_token             = "insert yours token"
 ssh_path_public_file = "~/terra/bla/bla/yours/..rsa.pub"
-region               = "yoursReg"do_token      = "3b2028a000a0188d8cff7d19c14fced1cb631ea6cee1c48983696af2d8978289"
+region               = "yoursReg"
 name_ssh_key  = ""
 mail          = "mail_at_mail_com"
 name-resource =""
